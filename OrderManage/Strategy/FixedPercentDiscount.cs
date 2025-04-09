@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace OrderManage.Strategy
 {
-    public class PercentDiscount : IDiscountStrategy
+    public class FixedPercentDiscount: IDiscountStrategy
     {
         private readonly decimal _percent;
-
-        public PercentDiscount(decimal percent)
+        public FixedPercentDiscount(decimal percent)
         {
             _percent = percent;
         }
-
         public decimal GetDiscount(decimal totalPrice)
         {
             return totalPrice - (totalPrice * _percent / 100);
-        }
+        } 
     }
 }

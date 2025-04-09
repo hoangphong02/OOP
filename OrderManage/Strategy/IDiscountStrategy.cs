@@ -8,6 +8,6 @@ namespace OrderManage.Strategy
 {
     public interface IDiscountStrategy
     {
-        decimal getDiscount(decimal totalPrice);
+        decimal GetDiscount(decimal totalPrice);
     }
 }

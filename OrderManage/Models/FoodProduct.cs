@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OrderManage.Strategy;
 
 namespace OrderManage.Models
 {
     public class FoodProduct : Product
-    {   
-        public FoodProduct(Guid id, string name, decimal price)
-            :base(id, name,price)
+    {
+        public DateTime Exprire;
+        public FoodProduct(Guid id, string name, decimal price, IDiscountStrategy discountStrategy, DateTime exprire)
+            : base(id, name, price, discountStrategy)
         {
-          
+            Exprire= exprire;
         }
 
-        public override void showInfo()
+        public override void ShowInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"[Thực phẩm] ID={Id} | Tên: {Name} | Gía: {Price} | Gía sau giảm: {GetPriceAfterDiscount()}");
         }
     }
 }

@@ -1,0 +1,10 @@
+﻿# File .gitignore chuẩn cho project C#
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.vsidx
+*.db
+*.log
